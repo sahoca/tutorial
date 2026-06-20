@@ -45,9 +45,22 @@ prof_literatur/
 
 ## Kullanım
 
-1. Kamuya açık kaynaklardan derlenen yayınları `publications.json` dosyasına
-   (şema için `publications.sample.json`) yazın.
-2. `python build_bibliography.py --input publications.json` çalıştırın.
+İnternet erişimli bir makinede (ör. kendi masaüstü bilgisayarınız):
+
+```bash
+pip install requests
+
+# 1) ORCID herkese açık API'sinden veriyi çek (+ Crossref ile zenginleştir)
+python fetch_orcid.py --orcid 0000-0001-8025-8439 --mailto sizinmail@ornek.com
+
+# 2) Klasör yapısını ve künyeleri üret, açık erişim PDF'leri indir
+python build_bibliography.py --input publications.json
+```
+
+Alternatif: `fetch_orcid.py` yerine yayınları elle `publications.json`
+dosyasına da yazabilirsiniz (şema için `publications.sample.json`). YÖK
+Akademik / Google Scholar / DergiPark kayıtlarını elle ekleyip
+`confirmed_by` alanına ilgili kaynağı yazarak teyit sayısını artırabilirsiniz.
 
 Script, sahte tarayıcı/cihaz taklidi yapmaz; erişim engeli (ör. 403) alınan
 PDF'leri atlar ve ilgili künyeye "PDF indirilemedi" notu düşer.
