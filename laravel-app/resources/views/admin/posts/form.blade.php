@@ -30,7 +30,7 @@
             <div>
                 <label class="block text-sm font-medium mb-1">Öne Çıkan Görsel</label>
                 @if ($post->featured_image)
-                    <img src="{{ \Illuminate\Support\Facades\Storage::url($post->featured_image) }}" class="h-32 rounded mb-2 object-cover">
+                    <img src="{{ $post->featured_url }}" class="h-32 rounded mb-2 object-cover">
                 @endif
                 <input type="file" name="image" accept="image/*" class="w-full text-sm">
             </div>

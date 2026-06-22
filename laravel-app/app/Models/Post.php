@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Post extends Model
@@ -28,6 +29,17 @@ class Post extends Model
                 $post->published_at = now();
             }
         });
+    }
+
+    public function getFeaturedUrlAttribute(): ?string
+    {
+        if (! $this->featured_image) {
+            return null;
+        }
+
+        return Str::startsWith($this->featured_image, ['http://', 'https://'])
+            ? $this->featured_image
+            : Storage::url($this->featured_image);
     }
 
     public function author(): BelongsTo

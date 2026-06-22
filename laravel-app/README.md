@@ -37,17 +37,23 @@ Varsayılan veritabanı **SQLite** (`database/database.sqlite`). MySQL kullanmak
 
 > ⚠️ Canlıya almadan önce bu şifreyi mutlaka değiştir.
 
-## WordPress İçeriğini Aktarma
+## İçerik Aktarma Komutları
 
-1. Eski WordPress'te **Araçlar → Dışa Aktar → Tüm içerik** ile `.xml` (WXR) indir.
-2. Dosyayı sunucuya koy ve çalıştır:
-   ```bash
-   php artisan wp:import /path/to/export.xml
-   ```
-3. Görseller: WordPress `wp-content/uploads` klasörünü `public/storage` altına kopyala.
+| Komut | Açıklama |
+|-------|----------|
+| `php artisan content:import-json` | `site-backup/data/*.json`'dan içeriği yükler (varsayılan, MariaDB gerekmez) |
+| `php artisan content:export-json` | Mevcut CMS içeriğini JSON'a aktarır |
+| `php artisan wp:import-db` | Aynı veritabanındaki WordPress `wp_*` tablolarından aktarır (MariaDB) |
+| `php artisan wp:import dosya.xml` | WordPress WXR (XML) export dosyasından aktarır |
 
-Alternatif olarak elinde sadece **SQL dump** varsa, `wp_posts` tablosundaki içerik
-`pages`/`posts` tablolarına aktarılabilir — gerekirse bunun için ayrı bir komut eklenir.
+WordPress veritabanı dökümünden (site.sql) MariaDB ile tam kurulum:
+`../docs/02-MARIADB-VE-ICERIK.md`.
+
+### Görseller
+
+İçerikteki görseller eski alan adına işaret eder. Kalıcı yapmak için FTP'den
+`wp-content/uploads` klasörünü `public/storage/uploads` altına kopyala ve içerikteki
+eski alan adını toplu değiştir.
 
 ## Teknik
 

@@ -1,7 +1,7 @@
 <article class="border rounded-lg overflow-hidden hover:shadow-md transition">
     @if ($post->featured_image)
         <a href="{{ route('post', $post->slug) }}">
-            <img src="{{ \Illuminate\Support\Facades\Storage::url($post->featured_image) }}" class="h-44 w-full object-cover">
+            <img src="{{ $post->featured_url }}" class="h-44 w-full object-cover">
         </a>
     @endif
     <div class="p-5">

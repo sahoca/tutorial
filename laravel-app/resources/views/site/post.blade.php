@@ -7,7 +7,7 @@
         <div class="text-sm text-gray-400 mb-2">{{ optional($post->published_at)->format('d F Y') }}</div>
         <h1 class="text-4xl font-bold mb-6">{{ $post->title }}</h1>
         @if ($post->featured_image)
-            <img src="{{ \Illuminate\Support\Facades\Storage::url($post->featured_image) }}" class="w-full rounded-lg mb-8 object-cover">
+            <img src="{{ $post->featured_url }}" class="w-full rounded-lg mb-8 object-cover">
         @endif
         <div class="prose max-w-none">{!! $post->content !!}</div>
     </article>
