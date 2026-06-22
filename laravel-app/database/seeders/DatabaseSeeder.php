@@ -57,5 +57,7 @@ class DatabaseSeeder extends Seeder
                 $item + ['location' => 'header']
             );
         }
+
+        $this->call(AssignmentSeeder::class);
     }
 }

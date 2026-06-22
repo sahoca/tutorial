@@ -19,6 +19,7 @@
                     ['admin.dashboard', 'Gösterge Paneli', []],
                     ['admin.pages.index', 'Sayfalar', ['admin/pages*']],
                     ['admin.posts.index', 'Yazılar', ['admin/posts*']],
+                    ['admin.assignments.index', 'Görevlendirmeler', ['admin/assignments*']],
                     ['admin.categories.index', 'Kategoriler', ['admin/categories*']],
                     ['admin.media.index', 'Medya', ['admin/media*']],
                     ['admin.menu.index', 'Menüler', ['admin/menu*']],

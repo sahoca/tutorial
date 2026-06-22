@@ -19,6 +19,7 @@
                 @foreach ($headerMenu as $item)
                     <a href="{{ $item->url }}" class="hover:text-blue-600">{{ $item->label }}</a>
                 @endforeach
+                <a href="{{ route('assignments') }}" class="hover:text-blue-600">Görevlendirmeler</a>
                 <a href="{{ route('blog') }}" class="hover:text-blue-600">Blog</a>
                 <a href="{{ route('contact') }}" class="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800">İletişim</a>
             </nav>
@@ -63,5 +64,15 @@
             {{ $siteSettings['footer_text'] ?? '© ' . date('Y') . ' ' . ($siteSettings['site_name'] ?? 'Analiz Değerleme') . '. Tüm hakları saklıdır.' }}
         </div>
     </footer>
+    {{-- Eksik gorseller icin placeholder (uploads henuz aktarilmadiysa) --}}
+    <script>
+        document.addEventListener('error', function (e) {
+            var t = e.target;
+            if (t && t.tagName === 'IMG' && !t.dataset.fallback) {
+                t.dataset.fallback = '1';
+                t.src = '/images/placeholder.svg';
+            }
+        }, true);
+    </script>
 </body>
 </html>

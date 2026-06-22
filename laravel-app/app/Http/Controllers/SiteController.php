@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Assignment;
 use App\Models\ContactMessage;
 use App\Models\Page;
 use App\Models\Post;
@@ -37,6 +38,27 @@ class SiteController extends Controller
         $page = Page::published()->where('slug', $slug)->firstOrFail();
 
         return view('site.page', compact('page'));
+    }
+
+    public function assignments(Request $request)
+    {
+        $query = Assignment::published()->latest('assignment_date');
+
+        if ($authority = $request->query('kurum')) {
+            $query->where('authority', $authority);
+        }
+
+        $assignments = $query->paginate(15)->withQueryString();
+        $authorities = Assignment::AUTHORITIES;
+
+        return view('site.assignments', compact('assignments', 'authorities'));
+    }
+
+    public function assignment(string $slug)
+    {
+        $assignment = Assignment::published()->where('slug', $slug)->firstOrFail();
+
+        return view('site.assignment', compact('assignment'));
     }
 
     public function contact()

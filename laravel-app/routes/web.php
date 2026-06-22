@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AssignmentController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MediaController;
@@ -20,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [SiteController::class, 'home'])->name('home');
 Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
 Route::get('/blog/{slug}', [SiteController::class, 'post'])->name('post');
+Route::get('/gorevlendirmeler', [SiteController::class, 'assignments'])->name('assignments');
+Route::get('/gorevlendirmeler/{slug}', [SiteController::class, 'assignment'])->name('assignment');
 Route::get('/iletisim', [SiteController::class, 'contact'])->name('contact');
 Route::post('/iletisim', [SiteController::class, 'contactSubmit'])->name('contact.submit');
 
@@ -44,6 +47,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
 
     Route::resource('pages', PageController::class)->except('show');
     Route::resource('posts', PostController::class)->except('show');
+    Route::resource('assignments', AssignmentController::class)->except('show');
     Route::resource('categories', CategoryController::class)->only(['index', 'store', 'update', 'destroy']);
 
     Route::get('media', [MediaController::class, 'index'])->name('media.index');

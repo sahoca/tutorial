@@ -49,6 +49,7 @@ Ham WordPress dökümünden MariaDB ile kurulum için: `docs/02-MARIADB-VE-ICERI
 - [x] **Gerçek içerik aktarıldı**: 11 sayfa, 37 yazı, 12 kategori, menü, ayarlar
 - [x] İçerik JSON'a dönüştürüldü (`site-backup/data/`) — SQL → JSON ✓
 - [x] İçe aktarma komutları: `wp:import-db`, `content:export-json`, `content:import-json`
-- [ ] Görsellerin aktarımı (FTP `uploads` → `public/storage`)
-- [ ] SPK/BDDK mevzuat & yönetmelik modülü (sıradaki)
+- [x] **Görseller "varmış gibi" planlandı**: URL'ler `/storage/uploads/`'a çevrildi, eksik görsel için placeholder fallback, `wp:fetch-media` indirme komutu
+- [x] **SPK/BDDK Görevlendirmeler modülü**: model + admin CRUD + `/gorevlendirmeler` sayfası; gerçek SPK belgeleriyle (denetim raporları, ticari sicil gazeteleri) dolduruldu
+- [ ] Görsel/PDF dosyalarının fiziksel aktarımı (ağ erişimi olan yerde `php artisan wp:fetch-media` veya FTP)
 - [ ] Eklenecek diğer modüller
