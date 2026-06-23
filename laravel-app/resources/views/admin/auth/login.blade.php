@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Giriş — Yönetim Paneli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<div class="w-full max-w-sm bg-white rounded-lg shadow-md p-8">
+    <h1 class="text-2xl font-semibold text-center mb-6">Yönetim Paneli</h1>
+
+    @if ($errors->any())
+        <div class="mb-4 rounded-md bg-red-100 border border-red-300 text-red-800 px-4 py-2 text-sm">
+            {{ $errors->first() }}
+        </div>
+    @endif
+
+    <form method="POST" action="{{ route('login') }}" class="space-y-4">
+        @csrf
+        <div>
+            <label class="block text-sm font-medium mb-1">E-posta</label>
+            <input type="email" name="email" value="{{ old('email') }}" required autofocus
+                   class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-gray-800 focus:outline-none">
+        </div>
+        <div>
+            <label class="block text-sm font-medium mb-1">Şifre</label>
+            <input type="password" name="password" required
+                   class="w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-gray-800 focus:outline-none">
+        </div>
+        <label class="flex items-center text-sm">
+            <input type="checkbox" name="remember" class="mr-2"> Beni hatırla
+        </label>
+        <button type="submit" class="w-full bg-gray-900 text-white py-2 rounded-md hover:bg-gray-800">Giriş Yap</button>
+    </form>
+</div>
+</body>
+</html>

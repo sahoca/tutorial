@@ -1,0 +1,30 @@
+[
+    {
+        "label": "Hakkımızda",
+        "url": "/hakkimizda",
+        "location": "header",
+        "sort_order": 1,
+        "is_active": true
+    },
+    {
+        "label": "Hizmetlerimiz",
+        "url": "/hizmetlerimiz",
+        "location": "header",
+        "sort_order": 2,
+        "is_active": true
+    },
+    {
+        "label": "Analiz’de Kariyer",
+        "url": "/analizde-kariyer",
+        "location": "header",
+        "sort_order": 3,
+        "is_active": true
+    },
+    {
+        "label": "Menu",
+        "url": "/yetki-belgelerimiz",
+        "location": "header",
+        "sort_order": 15,
+        "is_active": true
+    }
+]

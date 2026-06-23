@@ -1,0 +1,14 @@
+# Ham veritabani dokumler hassas veri icerir (sifre hash, API anahtari, odeme) - COMMITLEME
+*.sql
+*.sql.gz
+*.zip
+database/*.sql
+
+# Buyuk medya/HTML yedekleri repoya konmaz
+uploads/*
+html/*
+!*/.gitkeep
+
+# JSON icerik (site-backup/data) commitlenir - bilerek haric tutuluyor
+!data/
+!data/*.json

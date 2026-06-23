@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Bilgi Edinme",
+        "slug": "bilgi-edinme",
+        "description": null
+    },
+    {
+        "name": "Danışmanlık Hizmetleri",
+        "slug": "danismanlik-hizmetleri",
+        "description": null
+    },
+    {
+        "name": "Genel",
+        "slug": "genel-ru",
+        "description": null
+    },
+    {
+        "name": "Genel",
+        "slug": "genel-de",
+        "description": null
+    },
+    {
+        "name": "Genel",
+        "slug": "genel-fr",
+        "description": null
+    },
+    {
+        "name": "Genel",
+        "slug": "genel-ar",
+        "description": null
+    },
+    {
+        "name": "Genel",
+        "slug": "genel-zh",
+        "description": null
+    },
+    {
+        "name": "Hizmetlerimiz",
+        "slug": "hizmetlerimiz",
+        "description": null
+    },
+    {
+        "name": "İletişim",
+        "slug": "iletisim",
+        "description": null
+    },
+    {
+        "name": "Kurumsal",
+        "slug": "kurumsal",
+        "description": null
+    },
+    {
+        "name": "KVKK",
+        "slug": "kvkk",
+        "description": "KVKK Aydınlatma Metni"
+    }
+]
