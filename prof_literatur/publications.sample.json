@@ -1,0 +1,34 @@
+[
+  {
+    "title": "ÖRNEK BAŞLIK — gerçek veriyle değiştirin",
+    "authors": ["Yılmaz, Fatih", "Diğer Yazar"],
+    "venue": "Örnek Dergi Adı",
+    "year": 2020,
+    "volume": "12",
+    "issue": "3",
+    "pages": "45-67",
+    "doi": "10.0000/ornek.doi",
+    "oa_pdf_url": "https://dergipark.org.tr/.../download/article-file/000000",
+    "source_url": "https://dergipark.org.tr/.../000000",
+    "confirmed_by": ["ORCID", "DergiPark"],
+    "retraction": null
+  },
+  {
+    "title": "İKİNCİ ÖRNEK — geri çekilme alanı dolu örneği",
+    "authors": ["Yılmaz, Fatih"],
+    "venue": "Örnek Dergi 2",
+    "year": 2018,
+    "volume": "5",
+    "issue": "1",
+    "pages": "1-15",
+    "doi": "10.0000/ornek2",
+    "oa_pdf_url": null,
+    "source_url": "https://orcid.org/0000-0001-8025-8439",
+    "confirmed_by": ["ORCID"],
+    "retraction": {
+      "type": "erratum",
+      "source": "https://api.crossref.org/works/10.0000/ornek2",
+      "note": "Crossref kaydında erratum bağı mevcut (örnek)."
+    }
+  }
+]
